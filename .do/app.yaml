@@ -4,7 +4,7 @@ services:
   - name: nodejs-proxy
     source_dir: /
     github:
-      repo: annie/litellm-opus4-nodejs
+      repo: richafltr/litellm-opus4-nodejs
       branch: main
       deploy_on_push: true
     run_command: npm start
