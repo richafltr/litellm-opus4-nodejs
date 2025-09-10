@@ -1,0 +1,20 @@
+name: litellm-opus4-nodejs-proxy
+region: nyc
+services:
+  - name: nodejs-proxy
+    source_dir: /
+    github:
+      repo: annie/litellm-opus4-nodejs
+      branch: main
+      deploy_on_push: true
+    run_command: npm start
+    environment_slug: node-js
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    health_check:
+      http_path: /health
+      initial_delay_seconds: 10
+    envs:
+      - key: NODE_ENV
+        value: production
+        type: GENERAL
